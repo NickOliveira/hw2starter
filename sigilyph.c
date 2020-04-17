@@ -1,8 +1,8 @@
 /*
  * Homework #2
- * Date:    TODO
- * Author:  TODO
- * PID:     TODO
+ * Date:    4/15/2020
+ * Author:  Nicholas Oliveira
+ * PID:     A14525355
  * 
  * Program: Sigilyph Reverse Word (Mirror)
  *
@@ -51,10 +51,14 @@ main(void)
 int
 rev_word_print(char *line_ptr, int cnt)
 {
+    char inputCharacter;
+    char * buffer;
+    int index = 0;
 
-    /*
-     * TODO
-     */
+    while(index < cnt)
+    {
+
+    }   
 
     return(0);
 }
