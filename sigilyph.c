@@ -54,11 +54,21 @@ rev_word_print(char *line_ptr, int cnt)
     char inputCharacter;
     char * buffer;
     int index = 0;
-
-    while(index < cnt)
-    {
-
-    }   
-
+    int bufferIndex = 0;
+    
+    do {
+        inputCharacter = line_ptr++;
+        if(isspace(inputCharacter))
+        {
+            //print the contents of buffer in reverse order
+            clear(buffer);
+            bufferIndex = 0;
+        }
+        else
+        {
+            buffer += inputCharacter;
+        }
+        
+    }  while(inputCharacter != '\0'); 
     return(0);
 }
