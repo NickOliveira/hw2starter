@@ -51,24 +51,37 @@ main(void)
 int
 rev_word_print(char *line_ptr, int cnt)
 {
-    char inputCharacter;
-    char * buffer;
-    int index = 0;
-    int bufferIndex = 0;
-    
-    do {
-        inputCharacter = line_ptr++;
-        if(isspace(inputCharacter))
-        {
-            //print the contents of buffer in reverse order
-            clear(buffer);
-            bufferIndex = 0;
-        }
-        else
-        {
-            buffer += inputCharacter;
-        }
-        
-    }  while(inputCharacter != '\0'); 
-    return(0);
+    	char inputCharacter;
+       	int wordOffset = 0;
+
+   	while(1)
+	{
+		inputCharacter = *(line_ptr);
+		if(inputCharacter == '\0')
+		{
+			while(wordOffset > -1)
+			{
+				printf("%c", *(--line_ptr));
+				wordOffset--;
+			}
+			break;
+		}
+		if(isspace(inputCharacter))
+		{
+			int temp = wordOffset+1;
+			while(wordOffset > -1)
+			{
+				printf("%c", *(--line_ptr));
+				wordOffset--;
+			}
+			line_ptr+=temp;
+			printf("%c", inputCharacter);
+		}
+		else
+		{
+			wordOffset++;
+		}	
+    		line_ptr++;
+	}
+      	return(0);
 }
