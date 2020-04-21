@@ -59,9 +59,11 @@ rev_word_print(char *line_ptr, int cnt)
 		inputCharacter = *(line_ptr);
 		if(inputCharacter == '\0')
 		{
+			line_ptr--;
 			while(wordOffset > 0)
 			{
-				printf("char to add: %c value: %d \n", *(--line_ptr), *(line_ptr));
+				printf("%c", *(line_ptr));
+				line_ptr--;
 				wordOffset--;
 			}
 			break;
